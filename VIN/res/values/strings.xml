@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">King Sushi</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    
+   
+    <string name="PRICE" translatable="false">PREÇO:</string>
+    <string name="PRICE1" translatable="false">PREÇO</string>
+    <string name="ADD_TO_CART" translatable="false">ADD NO PEDIDO</string>
+    <string name="TYPE" translatable="false">TIPO</string>
+    <string name="SMALL" translatable="false">PEQUENO</string>
+    <string name="MEDIUM" translatable="false">MÉDIO</string>
+    <string name="LARGE" translatable="false">GRANDE</string>
+    <string name="QUANTITY" translatable="false">QUANTIDADE :</string>
+    <string name="QUANTITY1" translatable="false">QUANTIDADE</string>
+    <string name="CONFIRM_ORDER" translatable="false">CONFIRMAR PEDIDO</string>
+    <string name="ORDER_ID_IS_NOT_AVAIBLE_PLEASE_SCAN_QRCODE_OUN_YOUR_TABLE" translatable="false">POR FAVOR ESCANEAR O CODIGO QR EM SUA MESA</string>
+    <string name="PLEASE_SCAN_QRCODE_OUN_YOUR_TABLE" translatable="false">POR FAVOR ESCANEAR O CODIGO QR EM SUA MESA</string>
+    <string name="QR_CODE_MATCHED_SUCCESSFULLY" translatable="false">VOCÊ JA PODE FAZER SEU PEDIDO</string>
+    <string name="CALL_WAITER_SUCCESSFULLY" translatable="false">VOCE CHAMOU O GARÇOM</string>
+    <string name="ITEM_ADDED_SUCCESSFULLY" translatable="false">Item adicionado com sucesso</string>
+	<string name="YOUR_CART_IS_EMPTY" translatable="false">Seu carrinho está vazio</string>
+	<string name="ORDER_PLACED" translatable="false">SEU PEDIDO FOI FEITO</string>
+</resources>

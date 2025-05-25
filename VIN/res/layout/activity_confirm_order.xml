@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/list_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lin_final_total"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/lin_final_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_above="@+id/btn_confirm"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/label_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="TOTAL :"
+            android:textSize="18sp"
+            android:textColor="@color/product_name_color"/>
+        
+        <TextView
+            android:id="@+id/text_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="0.00"
+            android:singleLine="true"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/red"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/product_name_color"
+        android:padding="15dp"
+        android:gravity="center"
+        android:text="@string/CONFIRM_ORDER"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>
