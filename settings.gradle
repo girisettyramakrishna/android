@@ -1,0 +1,3 @@
+include ':VIN'
+rootProject.name = "RestaurantApp"
+
