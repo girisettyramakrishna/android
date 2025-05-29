@@ -1,37 +1,40 @@
 pipeline {
     agent any
-    
+
     environment {
-        ANDROID_HOME = "/home/ubuntu/android-sdk"
-        PATH = "$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+        ANDROID_HOME = "/opt/android-sdk"  // Update based on your setup
+        PATH = "$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', 
-                url: 'https://github.com/girisettyramakrishna/android.git'
+                git 'https://github.com/girisettyramakrishna/android.git'
             }
         }
-        
-        stage('Build Libraries') {
+
+        stage('Build QRcodeLibrary APK') {
             steps {
-                script {
-                    // Build each library module
-                    dir('QRcodeLibrary') {
-                        sh './gradlew assembleDebug'
-                    }
-                    dir('VIN') {
-                        sh './gradlew assembleDebug'
-                    }
+                dir('.') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew :QRcodeLibrary:assembleDebug'
                 }
             }
         }
-        
-        stage('Archive Artifacts') {
+
+        stage('Archive APK') {
             steps {
-                archiveArtifacts artifacts: '**/build/outputs/**/*.apk'
+                archiveArtifacts artifacts: 'QRcodeLibrary/build/outputs/**/*.apk', allowEmptyArchive: true
             }
+        }
+    }
+
+    post {
+        failure {
+            echo "Build failed! Please check the logs."
+        }
+        success {
+            echo "Build succeeded. APK archived."
         }
     }
 }
