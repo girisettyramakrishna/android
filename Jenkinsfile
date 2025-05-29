@@ -14,26 +14,23 @@ pipeline {
             }
         }
         
-        stage('Build Debug APK') {
+        stage('Build Libraries') {
             steps {
                 script {
-                    // Verify files exist first
-                    sh 'ls -la'
-                    sh 'ls -la app/'
-                    
-                    // Only proceed if gradlew exists
-                    if (fileExists('gradlew')) {
+                    // Build each library module
+                    dir('QRcodeLibrary') {
                         sh './gradlew assembleDebug'
-                    } else {
-                        error('gradlew file not found! Check project structure.')
+                    }
+                    dir('VIN') {
+                        sh './gradlew assembleDebug'
                     }
                 }
             }
         }
         
-        stage('Archive APK') {
+        stage('Archive Artifacts') {
             steps {
-                archiveArtifacts artifacts: 'app/build/outputs/apk/debug/*.apk'
+                archiveArtifacts artifacts: '**/build/outputs/**/*.apk'
             }
         }
     }
